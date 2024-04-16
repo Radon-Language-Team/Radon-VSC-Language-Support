@@ -1,0 +1,25 @@
+{
+  "name": "radon-vsc-language-support",
+  "displayName": "Radon-VSC-Language-Support",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "radon",
+      "aliases": ["Radon", "radon"],
+      "extensions": [".rad"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "radon",
+      "scopeName": "index.rad",
+      "path": "./syntaxes/radon.tmLanguage.json"
+    }]
+  }
+}
