@@ -1,6 +1,4 @@
-# radon-vsc-language-support README
-
-This is the README for your extension "radon-vsc-language-support".
+# Radon VSCode Language Support
 
 ## Features
 
