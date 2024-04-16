@@ -1,32 +1,85 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Radon",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.radon",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.radon",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.radon",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "index.rad"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Radon",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#expressions"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.radon",
+          "match": "\\b(if|while|for|return)\\b"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "include": "#block-comment"
+        },
+        {
+          "include": "#line-comment"
+        }
+      ]
+    },
+    "line-comment": {
+      "name": "comment.line.radon",
+      "match": "^\\!!.*$"
+    },
+    "block-comment": {
+      "begin": "\\!!\\*",
+      "end": "\\*\\!!",
+      "beginCaptures": {
+        "0": { "name": "comment.block.begin.radon" }
+      },
+      "endCaptures": {
+        "0": { "name": "comment.block.end.radon" }
+      },
+      "name": "comment.block.radon"
+    },
+    "expressions": {
+      "patterns": [
+        { "include": "#integer" },
+        { "include": "#paren-expression" },
+        { "include": "#strings" }
+      ]
+    },
+    "integer": {
+      "match": "\\$int",
+      "name": "keyword.integer.radon"
+    },
+    "strings": {
+      "name": "string.quoted.single.radon",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape.radon",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "paren-expression": {
+      "begin": "\\(",
+      "end": "\\)",
+      "beginCaptures": {
+        "0": { "name": "punctuation.paran.open" }
+      },
+      "endcaptures": {
+        "0": { "name": "punctuation.paran.close" }
+      },
+      "name": "expression.group",
+      "patterns": [{ "include": "#expressions" }]
+    }
+  },
+  "scopeName": "index.rad"
 }
