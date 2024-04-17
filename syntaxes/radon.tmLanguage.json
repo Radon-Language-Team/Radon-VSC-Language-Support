@@ -3,12 +3,8 @@
   "name": "Radon",
   "patterns": [
     { "include": "#keywords" },
-    {
-      "include": "#comments"
-    },
-    {
-      "include": "#expressions"
-    },
+    { "include": "#comments" },
+    { "include": "#expressions" },
     { "include": "#paren-expression" }
   ],
   "repository": {
@@ -17,6 +13,10 @@
         {
           "name": "keyword.control.radon",
           "match": "\\b(if|while|for|quit|var)\\b"
+        },
+        {
+          "name": "keyword.operator.new.radon",
+          "match": "\\b(log)\\b"
         }
       ]
     },

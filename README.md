@@ -5,14 +5,11 @@ The official Language Support made for the Radon language.
     - Singleline comments
     - Block comments
 - Variables
-    - `$int` 
+    - `$int`
+    - `$string`
+    - `$char` 
 - Brackets
     - ()
-## Requirements
-
-## Extension Settings
-
-## Known Issues
-
-## Release Notes
-
+- Keywords
+    - if/while/for/quit/var
+    - log
