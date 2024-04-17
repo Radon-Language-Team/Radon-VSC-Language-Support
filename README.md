@@ -1,14 +1,15 @@
-# radon-vsc-language-support README
-
-This is the README for your extension "radon-vsc-language-support".
-
+# Radon VSCode Language Support
+The official Language Support made for the Radon language. 
 ## Features
-
-## Requirements
-
-## Extension Settings
-
-## Known Issues
-
-## Release Notes
-
+- Comments
+    - Singleline comments
+    - Block comments
+- Variables
+    - `$int`
+    - `$string`
+    - `$char` 
+- Brackets
+    - ()
+- Keywords
+    - if/while/for/quit/var
+    - log
