@@ -1,8 +1,12 @@
 {
   "name": "radon-vsc-language-support",
   "displayName": "Radon-VSC-Language-Support",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Radon-Language-Team/Radon-VSC-Language-Support"
+    },
   "description": "",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.88.0"
   },
@@ -26,7 +30,7 @@
     "grammars": [
       {
         "language": "radon",
-        "scopeName": "index.rad",
+        "scopeName": "source.radon",
         "path": "./syntaxes/radon.tmLanguage.json"
       }
     ]
