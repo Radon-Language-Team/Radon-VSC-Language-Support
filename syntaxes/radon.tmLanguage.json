@@ -33,7 +33,7 @@
         },
         {
           "name": "keyword.other.unit.radon",
-          "match": "\\b(int|string|bool|float)\\b"
+          "match": "\\b(int|string|bool|float|void|any)\\b"
         },
         {
           "name": "keyword.control.return.radon",
