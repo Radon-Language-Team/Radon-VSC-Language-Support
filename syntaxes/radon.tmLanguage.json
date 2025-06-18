@@ -3,13 +3,13 @@
   "name": "Radon",
   "patterns": [
     {
-      "include": "#keywords"
-    },
-    {
       "include": "#comments"
     },
     {
       "include": "#strings"
+    },
+    {
+      "include": "#keywords"
     },
     {
       "include": "#functions"
@@ -19,9 +19,6 @@
     },
     {
       "include": "#variables"
-    },
-    {
-      "include": "#functions"
     }
   ],
   "repository": {
@@ -36,8 +33,28 @@
           "match": "\\b(int|string|bool|float|void|any)\\b"
         },
         {
-          "name": "keyword.control.return.radon",
-          "match": "\\b(return|proc)\\b"
+          "name": "keyword.control.emit.radon",
+          "match": "\\b(emit)\\b"
+        },
+        {
+          "name": "keyword.control.decay.radon",
+          "match": "\\b(decay)\\b"
+        },
+        {
+          "name": "keyword.other.element.radon",
+          "match": "\\b(elem)\\b"
+        },
+        {
+          "name": "keyword.other.isotope.radon",
+          "match": "\\b(iso)\\b"
+        },
+        {
+          "name": "keyword.other.react.radon",
+          "match": "\\b(react)\\b"
+        },
+        {
+          "name": "storage.modifier.import.java.radon",
+          "match": "\\b(mixture)\\b"
         }
       ]
     },
@@ -71,20 +88,16 @@
       "patterns": [
         {
           "name": "keyword.operator.assignment.radon",
-          "match": ":="
-        },
-        {
-          "name": "keyword.operator.reassignment.radon",
-          "match": "\\b=\\b"
-        },
-        {
-          "name": "keyword.operator.arrow.radon",
-          "match": "->"
+          "match": "="
         }
       ]
     },
     "expressions": {
       "patterns": [
+        {
+          "name": "storage.modifier.import.java.alloc.radon",
+          "match": "@[a-zA-Z_][a-zA-Z0-9_]*"
+        },
         {
           "name": "constant.numeric.radon",
           "match": "\\b\\d+\\b"
@@ -107,7 +120,7 @@
         },
         {
           "name": "keyword.operator.comparison.radon",
-          "match": "==|!=|<|>|<=|>="
+          "match": "==|!=|<|>|<=|>=?"
         }
       ]
     },
@@ -123,7 +136,7 @@
       "patterns": [
         {
           "name": "variable.other.local.radon",
-          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?!\\s*:=)"
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?!\\s*=)"
         }
       ]
     },
