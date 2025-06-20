@@ -50,7 +50,7 @@
         },
         {
           "name": "keyword.other.react.radon",
-          "match": "\\b(react)\\b"
+          "match": "\\b(react|true|false)\\b"
         },
         {
           "name": "storage.modifier.import.java.radon",
